@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Github Graphql API Proxy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-color: rgb(250, 250, 250);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        }
+
+        main {
+            max-width: 48rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 1rem;
+        }
+
+        p {
+            line-height: 1.5;
+        }
+
+        .run-query {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .query-container {
+            position: relative;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            margin: 1rem 0;
+        }
+
+        .copy-container {
+            display: block;
+            position: absolute;
+            height: 100%;
+            width: 3rem;
+            right: 0;
+            top: 0;
+            background-color: #fff;
+            color: #111;
+            border-left: 1px solid #ddd;
+            text-decoration: none;
+        }
+
+        svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 1rem;
+            height: auto;
+            transform: translate(-50%, -50%);
+        }
+
+        .CodeMirror {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .query {
+            overflow: scroll;
+            background-color: #fff;
+            padding: 1rem;
+            margin: 0;
+        }
+
+        .label {
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Github Graphql API Proxy</h1>
+        <p>Enter a graphql query below to get a URL that returns a JSON object with the result</p>
+        <div class="run-query">
+            <span class="label">Graphql Query:</span>
+            <button class="run">Run</button>
+        </div>
+        <textarea id="editor">query {&#13;&#10;&#13;&#10;}</textarea>
+        <span class="label">Your Proxy URL:</span>
+        <div class="query-container">
+            <pre id="query" class="query">https://github-graphql-proxy.glitch.me/api/?query=</pre>
+            <a class="copy-container" href="#" data-clipboard-target="#query">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" class="feather feather-copy">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+            </a>
+        </div>
+    </main>
+</body>
+<script src="main.js"></script>
+
+</html>
